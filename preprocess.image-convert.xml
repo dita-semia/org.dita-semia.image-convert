@@ -25,14 +25,18 @@
 						</linecontainsregexp>
 					</filterchain>
 				</loadfile>
-				<for list="${svg-imagelist}" delimiter="${line.separator}" param="src-filename">
-					<sequential>
-						<propertyregex override="yes" property="dst-filename" input="@{src-filename}" regexp="...$" replace="${dita-semia.image-convert.dest-format}"/>
-						<echo message="converting @{src-filename} to ${dst-filename}"/>
-						<rasterize result="image/${dita-semia.image-convert.dest-format}" src="${output.dir}/@{src-filename}" dest="${output.dir}/${dst-filename}"/>
-					</sequential>
-				</for>
-				<Image/>
+				<if>
+					<isset property="svg-imagelist"/>
+					<then>
+						<for list="${svg-imagelist}" delimiter="${line.separator}" param="src-filename">
+							<sequential>
+								<propertyregex override="yes" property="dst-filename" input="@{src-filename}" regexp="...$" replace="${dita-semia.image-convert.dest-format}"/>
+								<echo message="converting @{src-filename} to ${dst-filename}"/>
+								<rasterize result="image/${dita-semia.image-convert.dest-format}" src="${output.dir}/@{src-filename}" dest="${output.dir}/${dst-filename}"/>
+							</sequential>
+						</for>
+					</then>
+				</if>
 			</then>
 			<else>
 				<echo message="skipped (needs to be activated by parameter dita-semia.image-convert.activate)"/>
