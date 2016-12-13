@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.dita-semia.image-convert">
+	
+	<feature extension="dita.conductor.target.relative" file="integrator.xml"/>
+	<feature extension="depend.preprocess.post"			value="dita-semia.preprocess.image-convert"/>
+	
+	<!-- sample transtype: xhtml-png -->
+	<feature extension="dita.conductor.transtype.check" value="xhtml-png"/>
+	<feature extension="dita.transtype.print" 			value="xhtml-png"/>
+	
+	<transtype name="xhtml-png" extends="xhtml" desc="DITA-SEMIA XHTHML with SVG to PNG"/>
+
+</plugin>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+	<target name="dita-semia.preprocess.image-convert">
+
+		<taskdef name="rasterize" classname="org.apache.tools.ant.taskdefs.optional.RasterizerTask"/>
+
+		<!-- default destination format: "png" -->
+		<if>
+			<not>
+				<isset property="dita-semia.image-convert.dest-format"/>
+			</not>
+			<then>
+				<property name="dita-semia.image-convert.dest-format" value="png"/>
+			</then>
+		</if>
+
+		<if>
+			<istrue value="${dita-semia.image-convert.activate}"/>
+			<then>
+				<loadfile property="svg-imagelist" srcFile="${dita.temp.dir}/image.list">
+					<filterchain>
+						<linecontainsregexp casesensitive="no">
+							<regexp pattern="[.]svg$"/>
+						</linecontainsregexp>
+					</filterchain>
+				</loadfile>
+				<for list="${svg-imagelist}" delimiter="${line.separator}" param="src-filename">
+					<sequential>
+						<propertyregex override="yes" property="dst-filename" input="@{src-filename}" regexp="...$" replace="${dita-semia.image-convert.dest-format}"/>
+						<echo message="converting @{src-filename} to ${dst-filename}"/>
+						<rasterize result="image/${dita-semia.image-convert.dest-format}" src="${output.dir}/@{src-filename}" dest="${output.dir}/${dst-filename}"/>
+					</sequential>
+				</for>
+				<Image/>
+			</then>
+			<else>
+				<echo message="skipped (needs to be activated by parameter dita-semia.image-convert.activate)"/>
+			</else>
+		</if>
+
+	</target>
+
+</project>

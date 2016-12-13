@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="org.dita-semia.image-convert.png">
+	
+	<target name="dita2xhtml-png.init">
+		<property name="args.xsl" 							value="${dita.plugin.org.dita-semia.image-convert.dir}/transtype-samples/xhtml-png/dita2xhtml-png.xsl"/>
+		<property name="dita-semia.image-convert.activate" 	value="true"/>
+	</target>
+
+	<target name="dita2xhtml-png" depends="dita2xhtml-png.init, dita2xhtml"/>
+
+</project>

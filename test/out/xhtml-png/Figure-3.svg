@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 Figure-3.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="6.80625in"
+		height="2.33333in" viewBox="0 0 490.05 168" xml:space="preserve" color-interpolation-filters="sRGB" class="st3">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:url(#grad28-4);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:4.08}
+		.st2 {fill:#000000;font-family:Calibri;font-size:11.6667em;font-style:italic;font-weight:bold}
+		.st3 {fill:none;fill-rule:evenodd;font-size:12;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Patterns_And_Gradients">
+		<linearGradient id="grad28-4" v:fillPattern="28" v:foreground="#f2f2f2" v:background="#ffffff" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" style="stop-color:#f2f2f2;stop-opacity:1"/>
+			<stop offset="1" style="stop-color:#ffffff;stop-opacity:1"/>
+		</linearGradient>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(4.08,-6.04725)">
+			<title>Tabelle.1</title>
+			<desc>Figure 3</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="240.945" cy="90.0472" width="481.89" height="155.906"/>
+			<rect x="0" y="12.0944" width="481.89" height="155.906" rx="14.1732" ry="14.1732" class="st1"/>
+			<text x="7.43" y="132.05" class="st2" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Figure 3</text>		</g>
+	</g>
+</svg>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="topic_h5w_hzc_gy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="urn:oasis:names:tc:dita:xsd:topic.xsd">
+  <title>Topic</title>
+  <body>
+		<fig>
+			<title>1st SVG</title>
+			<image href="Figure-1.svg" id="dhh_jzc_gy"/>
+		</fig>
+		<fig>
+			<title>2nd SVG</title>
+			<image href="Figure-2.svg" id="alx_jzc_gy"/>
+		</fig>
+		<fig>
+			<title>3rd SVG</title>
+			<image href="Figure-3.svg" id="mly_jzc_gy"/>
+		</fig>
+		<fig>
+			<title>1st PNG</title>
+			<image href="png-figure-1.png" id="vwq_dbd_gy"/>
+		</fig>
+	</body>
+</topic>
