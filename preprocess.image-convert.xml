@@ -3,21 +3,22 @@
 
 	<target name="dita-semia.preprocess.image-convert">
 
-		<taskdef name="rasterize" classname="org.apache.tools.ant.taskdefs.optional.RasterizerTask"/>
-
-		<!-- default destination format: "png" -->
-		<if>
-			<not>
-				<isset property="dita-semia.image-convert.dest-format"/>
-			</not>
-			<then>
-				<property name="dita-semia.image-convert.dest-format" value="png"/>
-			</then>
-		</if>
-
 		<if>
 			<istrue value="${dita-semia.image-convert.activate}"/>
 			<then>
+				
+				<taskdef name="rasterize" classname="org.apache.tools.ant.taskdefs.optional.RasterizerTask"/>
+				
+				<!-- default destination format: "png" -->
+				<if>
+					<not>
+						<isset property="dita-semia.image-convert.dest-format"/>
+					</not>
+					<then>
+						<property name="dita-semia.image-convert.dest-format" value="png"/>
+					</then>
+				</if>
+				
 				<loadfile property="svg-imagelist" srcFile="${dita.temp.dir}/image.list">
 					<filterchain>
 						<linecontainsregexp casesensitive="no">
@@ -25,6 +26,7 @@
 						</linecontainsregexp>
 					</filterchain>
 				</loadfile>
+				
 				<if>
 					<isset property="svg-imagelist"/>
 					<then>
@@ -37,6 +39,7 @@
 						</for>
 					</then>
 				</if>
+				
 			</then>
 			<else>
 				<echo message="skipped (needs to be activated by parameter dita-semia.image-convert.activate)"/>
