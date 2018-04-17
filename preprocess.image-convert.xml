@@ -19,6 +19,26 @@
 					</then>
 				</if>
 				
+				<!-- default dpi: 96" -->
+				<if>
+					<not>
+						<isset property="dita-semia.image-convert.dpi"/>
+					</not>
+					<then>
+						<property name="dita-semia.image-convert.dpi" value="96"/>
+					</then>
+				</if>
+				
+				<!-- default delete-src: true" -->
+				<if>
+					<not>
+						<isset property="dita-semia.image-convert.delete-src"/>
+					</not>
+					<then>
+						<property name="dita-semia.image-convert.delete-src" value="true"/>
+					</then>
+				</if>
+				
 				<loadfile property="svg-imagelist" srcFile="${dita.temp.dir}/image.list">
 					<filterchain>
 						<linecontainsregexp casesensitive="no">
@@ -34,10 +54,29 @@
 							<sequential>
 								<propertyregex override="yes" property="dst-filename" input="@{src-filename}" regexp="...$" replace="${dita-semia.image-convert.dest-format}"/>
 								<echo message="converting @{src-filename} to ${dst-filename}"/>
-								<rasterize result="image/${dita-semia.image-convert.dest-format}" src="${output.dir}/@{src-filename}" dest="${output.dir}/${dst-filename}"/>
+								<rasterize 
+										result	= "image/${dita-semia.image-convert.dest-format}" 
+										src		= "${output.dir}/@{src-filename}" 
+										dest	= "${output.dir}/${dst-filename}" 
+										dpi		= "${dita-semia.image-convert.dpi}"/>
+								<if>
+									<istrue value="${dita-semia.image-convert.delete-src}"/>
+									<then>
+										<delete file="${output.dir}/@{src-filename}" quiet="true"/>
+									</then>
+								</if>
 							</sequential>
 						</for>
+						<if>
+							<istrue value="${dita-semia.image-convert.delete-src}"/>
+							<then>
+								<echo message="deleted all source files."/>		
+							</then>
+						</if>
 					</then>
+					<else>
+						<echo message="(no svg files to be converted)"/>
+					</else>
 				</if>
 				
 			</then>
