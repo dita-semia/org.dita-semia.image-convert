@@ -10,7 +10,7 @@ Since after installation the step will be executed for every(!) transtype the fe
 ## Parameters (ant properties):
 - **dita-semia.image-convert.activate**
 
-  Switch to aktivate this preprocessing step. Needs to be set to true.
+  Switch to activate this preprocessing step. Needs to be set to true.
 
 - **dita-semia.image-convert.dest-format**
 
