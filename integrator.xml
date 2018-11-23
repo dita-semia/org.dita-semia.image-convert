@@ -1,6 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project>
 	
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="plugins/org.dita-semia.image-convert/lib/ant-contrib-1.0b3.jar"/>
+		</classpath>
+	</taskdef>
+	
 	<import file="preprocess.image-convert.xml"/>
 	
 	<import file="transtype-samples/xhtml-png/build.xml"/>

@@ -5,6 +5,7 @@
 	<feature extension="depend.preprocess.post"			value="dita-semia.preprocess.image-convert"/>
 	<feature extension="dita.conductor.lib.import"		file="lib/RasterizerTask.jar"/>
 	<feature extension="dita.conductor.lib.import"		file="lib/batik-all-1.8.jar"/>
+	<feature extension="dita.conductor.lib.import"		file="lib/xml-apis-ext.jar"/>
 	
 	<!-- sample transtype: xhtml-png -->
 	<feature extension="dita.conductor.transtype.check" value="xhtml-png"/>
