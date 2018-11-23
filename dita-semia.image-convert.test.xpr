@@ -10,11 +10,11 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>plugin.xml</String>
+                                    <String>test/image-convert-test.ditamap</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>DITA-SEMIA XHTML with SVG-Convert</String>
+                                        <String>DITA-SEMIA XHTHML with SVG to PNG</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -89,7 +89,7 @@
                                             <null/>
                                         </field>
                                         <field name="ditavalFilePath">
-                                            <String></String>
+                                            <null/>
                                         </field>
                                         <field name="simpleFiltersList">
                                             <list/>
@@ -254,10 +254,7 @@
                                     <String>DITA-OT</String>
                                 </field>
                                 <field name="extensionURLs">
-                                    <String-array>
-                                        <String>${configured.ditaot.dir.url}/plugins/org.dita-semia.image-convert/lib/RasterizerTask.jar</String>
-                                        <String>${configured.ditaot.dir.url}/plugins/org.dita-semia.image-convert/lib/batik-all-1.8.jar</String>
-                                    </String-array>
+                                    <String-array/>
                                 </field>
                             </ditaScenario>
                             <ditaScenario>
@@ -490,6 +487,7 @@
     </meta>
     <projectTree name="dita-semia.image-convert.test.xpr">
         <folder path="."/>
+        <folder path="../org.dita.base/"/>
         <folder path="../org.dita.xhtml/"/>
     </projectTree>
 </project>
