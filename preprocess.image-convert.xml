@@ -39,6 +39,7 @@
 					</then>
 				</if>
 				
+				<!-- convert svg images -->
 				<loadfile property="svg-imagelist" srcFile="${dita.temp.dir}/image.list">
 					<filterchain>
 						<linecontainsregexp casesensitive="no">
@@ -70,12 +71,60 @@
 						<if>
 							<istrue value="${dita-semia.image-convert.delete-src}"/>
 							<then>
-								<echo message="deleted all source files."/>		
+								<echo message="deleted all svg source files."/>		
 							</then>
 						</if>
 					</then>
 					<else>
 						<echo message="(no svg files to be converted)"/>
+					</else>
+				</if>
+				
+				
+				<!-- convert pdf images -->
+				<loadfile property="pdf-imagelist" srcFile="${dita.temp.dir}/image.list">
+					<filterchain>
+						<linecontainsregexp casesensitive="no">
+							<regexp pattern="[.]pdf$"/>
+						</linecontainsregexp>
+					</filterchain>
+				</loadfile>
+				
+				<if>
+					<isset property="pdf-imagelist"/>
+					<then>
+						<for list="${pdf-imagelist}" delimiter="${line.separator}" param="src-filename">
+							<sequential>
+								<propertyregex override="yes" property="dst-filename" input="@{src-filename}" regexp="...$" replace="${dita-semia.image-convert.dest-format}"/>
+								<echo message="converting @{src-filename} to ${dst-filename}"/>
+								<java 
+										classname		= "org.apache.pdfbox.tools.PDFToImage"
+										classpathref	= "dost.class.path"
+										fork			= "true"
+										failonerror		= "true">
+									<arg value="${output.dir}/@{src-filename}"/>
+									<arg value="-outputPrefix @{src-filename}"/>
+									<arg value="-imageType ${dita-semia.image-convert.dest-format}"/>
+									<arg value="-dpi ${dita-semia.image-convert.dpi}"/>
+									<arg value="-page 1"/>
+								</java>
+								<if>
+									<istrue value="${dita-semia.image-convert.delete-src}"/>
+									<then>
+										<delete file="${output.dir}/@{src-filename}" quiet="true"/>
+									</then>
+								</if>
+							</sequential>
+						</for>
+						<if>
+							<istrue value="${dita-semia.image-convert.delete-src}"/>
+							<then>
+								<echo message="deleted all pdf source files."/>		
+							</then>
+						</if>
+					</then>
+					<else>
+						<echo message="(no pdf files to be converted)"/>
 					</else>
 				</if>
 				

@@ -10,7 +10,7 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>test/image-convert-test.ditamap</String>
+                                    <String>test/topic.dita</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -25,7 +25,7 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>test/topic.dita</String>
+                                    <String>test/image-convert-test.ditamap</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
